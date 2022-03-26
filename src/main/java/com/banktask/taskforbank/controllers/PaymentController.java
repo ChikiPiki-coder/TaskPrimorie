@@ -22,12 +22,6 @@ public class PaymentController {
 
     @PostMapping("/payment")
     public ResponseEntity<CommissionResponse> processPayment(@RequestBody PaymentDTO payment) {
-        Payment payment1 = new Payment();
-        payment1.setAmount(payment.getAmount());
-        payment1.setPaymentDate(payment.getPaymentDate());
-        payment1.setComment(payment.getComment());
-        payment1.setUserId(payment.getUserId());
-        paymentRepository.save(payment1);
         return new ResponseEntity<>(commissionService.commissionCalculate(payment), HttpStatus.OK);
     }
 }
