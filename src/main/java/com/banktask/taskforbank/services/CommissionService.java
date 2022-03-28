@@ -39,7 +39,7 @@ public class CommissionService {
         );
     }
 
-    private void saveToBD(PaymentDTO payment){
+    private void saveToDB(PaymentDTO payment){
         Payment paymentEntity = new Payment();
         paymentEntity.setAmount(payment.getAmount());
         paymentEntity.setPaymentDate(payment.getPaymentDate());
